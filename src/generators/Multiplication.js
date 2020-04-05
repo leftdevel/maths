@@ -26,7 +26,9 @@ export function generate(multiplicandDigits, multiplierDigits) {
   return new Multiplication({ multiplicand, multiplier });
 }
 
+export function resolveListRandomly(list, solveCount) {
 
+}
 
 export default {
   generateListForNumber,
