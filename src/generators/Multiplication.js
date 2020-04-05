@@ -1,27 +1,4 @@
-class Multiplication {
-  multiplicand = 0;
-
-  multiplier = 0;
-
-  result = 0;
-
-  constructor({ multiplicand, multiplier }) {
-    this.multiplicand = multiplicand;
-    this.multiplier = multiplier;
-  }
-
-  getExpression() {
-    return `${this.multiplicand} X ${this.multiplier} = `;
-  }
-
-  resolve() {
-    this.result = this.multiplicand * this.multiplier;
-  }
-
-  hasResult() {
-    return this.result > 0;
-  }
-}
+import Multiplication from "../model/Multiplication";
 
 export function generateListForNumber(multiplicand) {
   const result = [];
@@ -42,7 +19,17 @@ export function shuffleList(list) {
   return shuffled;
 }
 
+export function generate(multiplicandDigits, multiplierDigits) {
+  const multiplicand = Math.floor(Math.random() * (10 ** multiplicandDigits));
+  const multiplier = Math.floor(Math.random() * (10 ** multiplierDigits));
+
+  return new Multiplication({ multiplicand, multiplier });
+}
+
+
+
 export default {
   generateListForNumber,
   shuffleList,
+  generate,
 };
