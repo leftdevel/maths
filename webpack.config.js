@@ -13,21 +13,11 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: "eslint-loader",
-        options: {
-          cache: true,
-        },
       },
       {
         test: /\.jsx?$/, // a regular expression that catches .js files
         exclude: /node_modules/,
         loader: "babel-loader",
-        options: {
-          plugins: [
-            ["@babel/plugin-proposal-decorators", { legacy: true }],
-            ["@babel/plugin-proposal-class-properties", { loose: true }],
-          ],
-          presets: ["@babel/env", "@babel/react"],
-        },
       },
       {
         test: /\.s[ac]ss$/i,
