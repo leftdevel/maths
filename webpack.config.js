@@ -1,13 +1,21 @@
 const path = require("path");
 
 module.exports = {
-  entry: ["babel-polyfill", "./src/index.jsx"],
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
+  entry: ["babel-polyfill", "./index.js"],
   output: {
     path: path.join(__dirname, "public"),
     filename: "bundle.js",
   },
   module: {
     rules: [
+      {
+        test: /\.jsx?$/,
+        use: ["source-map-loader"],
+        enforce: "pre",
+      },
       {
         enforce: "pre",
         test: /\.jsx?$/,

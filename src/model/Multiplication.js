@@ -14,11 +14,15 @@ export default class Multiplication {
     return `${this.multiplicand} X ${this.multiplier} = `;
   }
 
-  resolve() {
+  solve() {
     this.result = this.multiplicand * this.multiplier;
   }
 
   hasResult() {
     return this.result > 0;
+  }
+
+  getId() {
+    return `${this.multiplicand}_x_${this.multiplier}`;
   }
 }
