@@ -19,7 +19,7 @@ body {
     }
 }
 
-.page-gutter {
+.page-separator {
     height: 20px;
 }
 
@@ -40,21 +40,16 @@ body {
         width: 100%;
     }
 
-    .page-gutter {
+    .page-separator {
         display: none;
     }
 
     section, .section {
         padding: 0;
         margin: 0;
-        border-color: 1px blue solid;
     }
 
     .container {
         margin: 0;
-    }
-
-    div {
-        border: 1px solid black;
     }
 }
