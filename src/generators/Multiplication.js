@@ -1,10 +1,10 @@
-import Multiplication from "../model/Multiplication";
+import Statement, { Types } from "../model/Statement";
 
 function generateListForNumber(multiplicand) {
   const result = [];
 
   for (let i = 1; i <= 10; i += 1) {
-    result.push(new Multiplication({ multiplicand, multiplier: i }));
+    result.push(new Statement({ baseNumber: multiplicand, modifier: i, type: Types.MULTIPLICATION }));
   }
 
   return result;
@@ -25,7 +25,7 @@ function generate(multiplicandDigits, multiplierDigits) {
   const multiplicand = Math.floor(Math.random() * (10 ** multiplicandDigits));
   const multiplier = Math.floor(Math.random() * (10 ** multiplierDigits));
 
-  return new Multiplication({ multiplicand, multiplier });
+  return new Statement({ baseNumber: multiplicand, modifier: multiplier });
 }
 
 /**
